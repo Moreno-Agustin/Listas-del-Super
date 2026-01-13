@@ -1,0 +1,145 @@
+// =====================
+// Colores base suaves
+// =====================
+$bg: #e0f0ff;             // fondo general claro
+$shadow-light: rgba(255,255,255,0.7);
+$shadow-dark: rgba(0,0,0,0.1);
+$task-bg: #ffffff;        // fondo de las tareas
+$btn-bg: #78b7ff;         // color botón principal
+$btn-hover: #5fa0e0;      // hover del botón
+$completed-color: #999999; // tareas completadas
+
+// =====================
+// Mixin Neumorphism
+// =====================
+@mixin neumorphism($depth: 5px, $radius: 12px, $inset: false) {
+    border-radius: $radius;
+    background: $bg;
+    box-shadow: 
+        #{if($inset, "inset ", "")}#{$depth} #{$depth} #{$depth*2} $shadow-dark,
+        #{if($inset, "inset ", "")}-#{$depth} -#{$depth} #{$depth*2} $shadow-light;
+}
+
+// =====================
+// Contenedor principal
+// =====================
+.organizador {
+    @include neumorphism(10px, 20px);
+    padding: 30px;
+    width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    font-family: 'cursive';
+    h1 {
+        color: $btn-bg;
+        text-align: center;
+        font-size: 45px;
+        margin: auto; 
+    }
+
+
+// =====================
+// Input para nueva tarea
+// =====================
+#new-task-input {
+    border-radius: 15px;
+    border: none;
+    padding: 12px;
+    width: 95%;
+    outline: none;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    box-shadow: inset 2px 2px 5px $shadow-dark, inset -2px -2px 5px $shadow-light;
+    transition: all 0.2s ease;
+
+    &:focus {
+        box-shadow: inset 1px 1px 3px $shadow-dark, inset -1px -1px 3px $shadow-light;
+    }
+}
+
+// =====================
+// Botones (Agregar, Eliminar)
+// =====================
+button {
+    @include neumorphism(4px, 12px);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    background: $btn-bg;
+    color: white;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    border-radius: 20px;
+    margin-bottom: 15px;
+
+    &:hover {
+        background: $btn-hover;
+    }
+
+    &:active {
+        @include neumorphism(4px, 12px, true); // efecto inset
+    }
+}
+
+// =====================
+// Lista de tareas
+// =====================
+#tasklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        background-color: $task-bg;
+        padding: 12px 15px;
+        margin-bottom: 12px;
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px;
+        box-shadow: 4px 4px 10px $shadow-dark, -4px -4px 10px $shadow-light;
+        transition: all 0.2s ease;
+
+        &:hover {
+            box-shadow: inset 2px 2px 5px $shadow-dark, inset -2px -2px 5px $shadow-light;
+        }
+
+        span {
+            flex-grow: 1;
+            margin-left: 10px;
+            font-size: 1rem;
+
+            &.completed {
+                text-decoration: line-through;
+                color: $completed-color;
+            }
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .delete-button {
+            margin-left: 10px;
+            background: #ff8a80;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+
+            &:hover {
+                background: #ff5c5c;
+            }
+
+            &:active {
+                box-shadow: inset 2px 2px 5px $shadow-dark, inset -2px -2px 5px $shadow-light;
+            }
+        }
+    }
+}
+}

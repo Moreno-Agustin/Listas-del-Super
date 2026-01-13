@@ -1,0 +1,104 @@
+.organizador {
+  border-radius: 20px;
+  background: #e0f0ff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
+  padding: 30px;
+  width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  font-family: "cursive";
+}
+.organizador h1 {
+  color: #78b7ff;
+  text-align: center;
+  font-size: 45px;
+  margin: auto;
+}
+.organizador #new-task-input {
+  border-radius: 15px;
+  border: none;
+  padding: 12px;
+  width: 95%;
+  outline: none;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+.organizador #new-task-input:focus {
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1), inset -1px -1px 3px rgba(255, 255, 255, 0.7);
+}
+.organizador button {
+  border-radius: 12px;
+  background: #e0f0ff;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: #78b7ff;
+  color: white;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.organizador button:hover {
+  background: #5fa0e0;
+}
+.organizador button:active {
+  border-radius: 12px;
+  background: #e0f0ff;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+}
+.organizador #tasklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.organizador #tasklist li {
+  background-color: #ffffff;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+.organizador #tasklist li:hover {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+.organizador #tasklist li span {
+  flex-grow: 1;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+.organizador #tasklist li span.completed {
+  text-decoration: line-through;
+  color: #999999;
+}
+.organizador #tasklist li input[type=checkbox] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.organizador #tasklist li .delete-button {
+  margin-left: 10px;
+  background: #ff8a80;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+.organizador #tasklist li .delete-button:hover {
+  background: #ff5c5c;
+}
+.organizador #tasklist li .delete-button:active {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+/*# sourceMappingURL=style.css.map */
